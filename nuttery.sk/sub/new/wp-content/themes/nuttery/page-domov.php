@@ -3,32 +3,52 @@
 
     <!-- Wrapper For Slides -->
 
-
     <?php
-    // Get the Video Fields
-    $video_mp4 =  get_field('mp4_file'); // MP4 Field Name
-    $video_poster  = get_field('obrazok_video'); // Poster Image Field Name
+    $nadpis = '';
+    $tlacidlo = '';
+    $tlacidlo_odkaz = '';
+    $video_mp4 = '';
+    $video_poster = '';
+    $video_link = '';
+    $video_link_text = '';
+    //get video field group
+    $video_group = get_field("video_group");
+    if ($video_group) {
+        // Get the Video Fields
+        $nadpis =          $video_group['nadpis_video'];
+        $tlacidlo =        $video_group['tlacidlo_video'];
+        $tlacidlo_odkaz =  $video_group['odkaz_tlacidlo_video'];
+        $video_mp4 =       $video_group['mp4_video']; // MP4 Field Name
+        $video_poster  =   $video_group['obrazok_video']; // Poster Image Field Name
+        $video_link =      $video_group['video_link'];
+        $video_link_text = $video_group['video_link_text'];
+    }
+
     ?>
     <div class="bg-video-wrapper">
         <div class="bg-video">
-            <video class="bg-video__content" autoplay muted loop>
+            <video class="bg-video__content" style="background-color: transparent;" autoplay muted loop poster="<?php echo $video_poster; ?>">
                 <source src="<?php echo $video_mp4; ?>" type="video/mp4" />
-
-                Your browser is not supported!
+                <img src="<?php echo $video_poster; ?>" alt="">
             </video>
         </div>
 
         <!-- Slide Text Layer -->
-        <div class="container align-vertical">
+        <div class="container main-header-align-vertical">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-6 align-self-center">
-                    <h1 class="title text-white"><?php the_field('nadpis_na_hlavnom_silderi'); ?></h1>
-                    <a class="cx btn btn-green-gradiant btn-rounded btn-md btn-arrow m-t-20 m-b-40" href="<?php the_field('odkaz'); ?>"><span><?php the_field('tlacidlo_slider'); ?><i class="ti-arrow-right"></i></span></a>
+                <div class="col-lg-6 col-md-8 col-sm-8 header_wrapper">
+                    <h1 class="title text-white"><?php echo $nadpis; ?></h1>
+                    <a class="cx btn btn-green-gradiant btn-rounded btn-md btn-arrow m-t-20 m-b-40" href="<?php echo $tlacidlo_odkaz; ?>"><span><?php echo $tlacidlo; ?><i class="ti-arrow-right"></i></span></a>
 
                 </div>
-                <div class="col-lg-6 col-md-6  col-xs-6 align-self-center text-center">
-                    <img src="https://new.nuttery.sk/wp-content/themes/nuttery/seduco-core/img/basket.svg" alt="" srcset="">
-                    <span class="title text-white">pozri video</span>
+                <div class="col-lg-6 col-md-4  col-sm-4 video_description align-self-center">
+                    <div>
+                        <a href="<?php echo $video_link ?>" rel="noopener noreferrer">
+                            <span class="title text-white"><?php echo $video_link_text;  ?></span>
+                            <img src="https://new.nuttery.sk/wp-content/themes/nuttery/seduco-core/img/basket.svg" alt="" srcset="">
+                        </a>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,7 +60,7 @@
     <div id='hero-mobile'></div>
 </section>
 <section>
-    <div class="spacer feature12" style="padding-bottom: 0">
+    <div class="spacer-custom feature12" style="padding-bottom: 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 p-r-40">
