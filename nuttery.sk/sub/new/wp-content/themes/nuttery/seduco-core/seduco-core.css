@@ -189,7 +189,8 @@ a:hover {
 }
 
 .h6-nav-bar .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    //TODO: zmenené Patryk 
+    color: rgba(255, 255, 255);
 }
 body.onas .h6-nav-bar .navbar-nav .nav-link,
 body.o .h6-nav-bar .navbar-nav .nav-link,
@@ -3725,10 +3726,14 @@ body.kontakt .h6-nav-bar .vlajocka-desktop span {
 /* Patrik  */
 
 .home-slider h1.title {
-    font-size: 65px;
-    line-height: 1.1;
-    font-weight: 700;
-    text-shadow: 1px 1px 7px #313131;
+    font-size: 62px;
+    max-width: 580px;
+    font-weight: normal;
+    line-height: 1.21;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 2px #ffffff;
 }
 
 .main-header-align-vertical {
@@ -3769,18 +3774,31 @@ body.kontakt .h6-nav-bar .vlajocka-desktop span {
 }
 
 .video_description span {
+    text-transform: uppercase;
     max-width: 60px;
     display: inline-block;
-    font-size: 1.2rem;
-    line-height: 0.9;
-    font-weight: 500;
-    text-shadow: 1px 1px 7px #313131;
-    margin-right: 10px;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: left;
+    color: #ffffff;
+    font-weight: 600;
+    margin-right: 12px;
+    margin-top: 12px;
 }
 .video_description img {
-    width: 50px;
-    height: auto;
+    width: 74px;
+    height: 74px;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    border-radius: 200px;
 }
+.video_description img:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+    animation: none;
+}
+
+
 
 @media only screen and (max-width: 991.98px) {
     .home-slider h1.title {
@@ -3790,8 +3808,9 @@ body.kontakt .h6-nav-bar .vlajocka-desktop span {
 @media only screen and (max-width: 768.9px) {
     .video_description {
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 25px;
     }
+   
     .home-slider h1.title {
         margin-bottom: 0;
     }
@@ -3813,9 +3832,9 @@ body.kontakt .h6-nav-bar .vlajocka-desktop span {
     }
     .home-slider .bg-video__content {
         width: 350%;
-        left: -100%;
+        left: -125%;
     }
-    .btn:not(:disabled):not(.disabled){
+    .btn:not(:disabled):not(.disabled) {
         font-size: 13px;
     }
 }
@@ -3825,11 +3844,39 @@ body.kontakt .h6-nav-bar .vlajocka-desktop span {
     }
 }
 
-.spacer-custom{
+.spacer-custom {
     padding-top: 50px;
 }
 @media only screen and (max-width: 576.9px) {
-    .spacer-custom{
+    .spacer-custom {
         padding-top: 20px;
     }
 }
+
+
+
+@-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }

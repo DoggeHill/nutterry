@@ -24,6 +24,8 @@
         $video_link_text = $video_group['video_link_text'];
     }
 
+
+
     ?>
     <div class="bg-video-wrapper">
         <div class="bg-video">
@@ -43,11 +45,10 @@
                 </div>
                 <div class="col-lg-6 col-md-4  col-sm-4 video_description align-self-center">
                     <div>
-                        <a href="<?php echo $video_link ?>" rel="noopener noreferrer">
+                        <a href="<?php echo $video_link ?>" data-rel="lightcase" rel="noopener noreferrer">
                             <span class="title text-white"><?php echo $video_link_text;  ?></span>
-                            <img src="https://new.nuttery.sk/wp-content/themes/nuttery/seduco-core/img/basket.svg" alt="" srcset="">
+                            <img src="https://nuttery.sk/wp-content/themes/nuttery/images/ui/play-button.svg" alt="" srcset="">
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -76,7 +77,7 @@
                     <div class="row wrap-feature-12">
                         <div class="col-md-6">
                             <div class="row">
-                                <div class="col-md-12"><img src="<?php echo get_template_directory_uri(); ?>/images/homepage/Nuttery-home01.jpg" class="rounded img-shadow img-responsive" alt="milk" data-aos="fade-up" /></div>
+                                <div class="col-md-12"><img src="<?php echo get_template_directory_uri(); ?>/images/homepage/Nuttery-home01.jpg" class="rounded img-shadow img-responsive" alt="milk" /></div>
                                 <div class="col-md-12"><img src="<?php echo get_template_directory_uri(); ?>/images/homepage/Nuttery-home02.jpg" class="rounded img-shadow img-responsive" alt="milk" data-aos="fade-up" /></div>
                             </div>
                         </div>
