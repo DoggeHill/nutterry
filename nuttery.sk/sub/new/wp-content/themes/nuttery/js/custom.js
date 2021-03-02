@@ -18,14 +18,14 @@ $(function () {
     // For page-wrapper height
     // ============================================================== 
     var set = function () {
-        var topOffset = 390;        
+        var topOffset = 390;
         var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
         height = height - topOffset;
         if (height < 1) height = 1;
         if (height > topOffset) {
             $(".page-wrapper").css("min-height", (height) + "px");
         }
-       
+
     };
     $(window).ready(set);
     $(window).on("resize", set);
@@ -48,38 +48,38 @@ $(function () {
     jQuery(document).on('click', '.mega-dropdown', function (e) {
         e.stopPropagation()
     });
-     jQuery(document).on('click', '.navbar-nav > .dropdown', function(e) {
-         e.stopPropagation();
+    jQuery(document).on('click', '.navbar-nav > .dropdown', function (e) {
+        e.stopPropagation();
     });
-    $(".dropdown-submenu").click(function(){
-              $(".dropdown-submenu > .dropdown-menu").toggleClass("show");                     
+    $(".dropdown-submenu").click(function () {
+        $(".dropdown-submenu > .dropdown-menu").toggleClass("show");
     });
     // ============================================================== 
     // Resize all elements
     // ============================================================== 
-    $("body").trigger("resize"); 
+    $("body").trigger("resize");
     // ============================================================== 
     //Fix header while scroll
     // ============================================================== 
-     var wind = $(window);
-         wind.on("load", function() {
-            var bodyScroll = wind.scrollTop(),
-                navbar = $(".topbar");
-            if (bodyScroll > 100) {
-                navbar.addClass("fixed-header animated slideInDown")
-            } else {
-                navbar.removeClass("fixed-header animated slideInDown")
-            }
-        });
-        $(window).scroll(function () {
-            if ($(window).scrollTop() >= 2) {
-                $('.topbar').addClass('fixed-header animated slideInDown');
-                $('.bt-top').addClass('visible');
-            } else {
-                $('.topbar').removeClass('fixed-header animated slideInDown');
-                $('.bt-top').removeClass('visible');
-            }
-        });
+    var wind = $(window);
+    wind.on("load", function () {
+        var bodyScroll = wind.scrollTop(),
+            navbar = $(".topbar");
+        if (bodyScroll > 100) {
+            navbar.addClass("fixed-header animated slideInDown")
+        } else {
+            navbar.removeClass("fixed-header animated slideInDown")
+        }
+    });
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 2) {
+            $('.topbar').addClass('fixed-header animated slideInDown');
+            $('.bt-top').addClass('visible');
+        } else {
+            $('.topbar').removeClass('fixed-header animated slideInDown');
+            $('.bt-top').removeClass('visible');
+        }
+    });
     // ============================================================== 
     // Animation initialized
     // ============================================================== 
@@ -93,15 +93,35 @@ $(function () {
             scrollTop: 0
         }, 700);
     });
-   
+
     // ============================================================== 
     // This is for the remove target blank from href
     // ============================================================== 
     $('a[target="_blank"]').removeAttr('target');
 
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         $('body').css("opacity", "1");
-        $('a[data-rel^=lightcase]').lightcase();
+        $('a[data-rel^=lightcase]').lightcase({
+            showSequenceInfo: false,
+            showTitle: false,
+            maxWidth: 1920,
+            maxHeight: 1080,
+            shrinkFactor: .9,
+
+
+            video: ({
+                width: 1920,
+                height: 1080,
+                autoplay: true
+            }),
+
+            iframe: ({
+                width: 1920,
+                height: 1080,
+                autoplay: true
+            })
+
+        });
+
     });
-    
 });

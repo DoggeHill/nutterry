@@ -24,6 +24,7 @@
         $video_link_text = $video_group['video_link_text'];
     }
 
+    $video_link = str_replace('watch?v=', 'embed/', $video_link);
 
 
     ?>
